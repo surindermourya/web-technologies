@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+      .body  {
+         width: 100vw;
+         height: 100vh;
+         box-sizing: border-box;
+      }
+      input, select {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 10px;
+        font-size: 17px;
+      }
+      h4 {
+        font-size: 3rem;
+        font-variant-caps: petite-caps;
+        font-weight: 500;
+      }
+      table {
+        width: 100%;
+      }
+      sup, span {
+        color: red;
+      }
+      .login, .profile, .register{
+        display: block;
+        width: 50%;
+        justify-content: center;
+        padding: 0% 25%;
+      }
+      label {
+        font-size: 35px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-variant-caps: petite-caps;
+      }
+      input {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin: 10px;
+        font-size: large;
+      }
+      h1 {
+        font-size: 4rem;
+        font-variant-caps: petite-caps;
+        font-weight: 500;
+        border-left: 45rem solid peachpuff;
+        border-bottom: 15px solid lightsalmon;
+      }
+    </style>
+  </head>
+  <body background="images/bg.jpg">
+  <center>
+  <h4>Welcome to the ShopeMania</h4>
+  <hr width="100%">
+  <div id="register" class="register">
+    <form action="#" name="registrationForm" method="post">
+      <table>
+        <tr>
+          <td><label for="name">Name <sup>*</sup></label></td>
+          <td><input type="text" name="name" id="name" placeholder="Enter name">
+            <span id="name-error"></span></td>
+          </tr>
+      <tr>
+        <td><label for="father-name">Father Name <sup>*</sup></label></td>
+        <td><input type="text" name="father-name" id="father-name" placeholder="Enter father name">
+          <span id="fname-error"></span></td>
+        </tr>
+        <tr>
+          <td><label for="mother-name">Mother Name <sup>*</sup></label></td>
+          <td><input type="text" name="mother-name" id="mother-name" placeholder="Enter mother name">
+            <span id="mname-error"></span></td>
+          </tr>
+          <tr>
+            <td><label for="mobile">Mobile <sup>*</sup></label></td>
+            <td><input type="text" name="mobile" onkeypress="" id="mobile" placeholder="Enter mobile number">
+              <span id="mobile-error"></span></td>
+            </tr>
+            <tr>
+              <td><label for="email">Email <sup>*</sup></label></td>
+              <td><input type="text" name="email" id="email" placeholder="Enter email">
+                <span id="email-error"></span></td>
+              </tr>
+              <tr>
+                <td><label for="address">Address <sup>*</sup></label></td>
+                <td><input type="text" name="address" id="address" placeholder="Enter address">
+                  <span id="address-error"></span></td>
+                </tr>
+                <tr>
+                  <td><label for="gender">Gender <sup>*</sup></label></td>
+                  <td class="gender">
+                    <select name="gender" id="gender">
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+            <option value="others">Others</option>
+          </select>
+          <span id="gender-error"></span>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="password">Password</label></td>
+        <td><input type="password" name="password" id="password" placeholder="Enter password">
+          <span id="password-error"></span>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" id="register" onclick="getRegister()" value="Register"></td>
+        <td><input type="reset" value="Reset" onclick="resetAll()"></td>
+      </tr>
+    </table>
+  </form>
+  </div>
+  <div class="login" id="login">
+    <form action="#" name="login" method="POST">
+        <h1>Login</h1>
+        <table>
+            <tr>
+                <td><label for="login-email">Email <sup>*</sup></label></td>
+                <td><input type="text" name="login-email" id="login-email" placeholder="Enter email">
+                    <span id="login-email-error"></span></td>
+            </tr>
+            <tr>
+                <td><label for="login-password">Password <sup>*</sup></label></td>
+                <td><input type="login-password" name="login-password" id="login-password" placeholder="Enter password">
+                    <span id="login-password-error"></span></td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" id="login" onclick="getlogin()" value="Login"></td>
+                <td><input class="btn" type="reset" id="reset" onclick="resetAll()" value="Reset"></td>
+            </tr>
+        </table>
+  </div>
+  <div class="profile" style="height: inherit;" id="profile">
+    <h1>Profile</h1>
+    <h2>Welcome to Our Web.</h2>
+    <hr>
+    <table>
+        <tr>
+            <td><h3>Name:</h3></td>
+            <td><h3 id="pname"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Father Name</h3></td>
+            <td><h3 id="pfname"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Mother Name</h3></td>
+            <td><h3 id="pmname"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Mobile</h3></td>
+            <td><h3 id="pmobile"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Email</h3></td>
+            <td><h3 id="pemail"></h3></td>
+        </tr>
+        <tr>
+            <td><h3>Address</h3></td>
+            <td><h3><address id="paddress"></address></h3></td>
+        </tr>
+    </table>
+</form>
+  </div>
+  </center>
+  <script>
+    register = document.getElementById('register');
+    login = document.getElementById('login');
+    profile = document.getElementById('profile');
+    login.style.display = 'none';
+    profile.style.display = 'none';
+    registerbtn = document.getElementById('register');
+    //Call for registration
+    function getRegister() {
+      registrationData = getRegisterData();
+      let error = isRegistrationFormValid(registrationData);
+      if(!error && registrationData){
+        localStorage.setItem('registration',JSON.stringify(registrationData));
+        register.style.display = 'none';
+        login.style.display = 'block';
+      }
+    }
+    // get registration form data
+    function getRegisterData() {
+      obj = {};
+      obj.name = document.getElementById('name').value;
+      obj.fname = document.getElementById('father-name').value;
+      obj.mname = document.getElementById('mother-name').value;
+      obj.mobile = document.getElementById('mobile').value;
+      obj.email = document.getElementById('email').value;
+      obj.address = document.getElementById('address').value;
+      obj.gender = document.getElementById('gender').value;
+      obj.password = document.getElementById('password').value;
+      return obj;
+    }
+    //check registration form validation
+    function isRegistrationFormValid(obj) {
+      if (!(obj.name).length || !(obj.fname).length || !(obj.mname).length || !(obj.mobile).length || !(obj.email).length || !(obj.address).length || !(obj.gender).length || !(obj.password).length) {
+        error = true;
+      } else {
+        error = false;
+      }
+      if(!(obj.name).length){
+        document.getElementById('name-error').innerHTML = "Name is required.";
+      }
+      if(!(obj.fname).length){
+        document.getElementById('fname-error').innerHTML = "Father name is required.";
+      }
+      if(!(obj.mname).length){
+        document.getElementById('mname-error').innerHTML = "Mother name is required.";
+      }
+      if(!(obj.mobile).length){
+        document.getElementById('mobile-error').innerHTML = "Mobile number is required.";
+      }
+      if(!(obj.email).length){
+        document.getElementById('email-error').innerHTML = "Email is required.";
+      }
+      if(!(obj.address).length){
+        document.getElementById('address-error').innerHTML = "Address is required.";
+      }
+      if(!(obj.password).length){
+        document.getElementById('password-error').innerHTML = "Password is required.";
+      }
+      return error;
+    }
+    //call on login button click
+    function getlogin() {
+        email = document.getElementById('login-email').value;
+        pass = document.getElementById('login-password').value;
+        resp = JSON.parse(localStorage.getItem('registration'));
+        isValid = isLoginFormValid(email,pass,resp);
+        if(isValid) {
+          login.style.display = 'none';
+          profile.style.display = 'block';
+          getProfile(resp);
+        }
+    }
+    //check login form validation
+    function isLoginFormValid(email,pass,resp) {
+      let error = true;
+      error = (resp.email !== email || resp.password !== pass) ? false : true;
+      if(resp.email !== email) {
+          document.getElementById('login-email-error').innerHTML = 'Please enter correct email.'
+      } else {
+          document.getElementById('login-email-error').innerHTML = ''
+      }
+      if(resp.password !== pass) {
+          document.getElementById('login-password-error').innerHTML = 'Please enter correct password.'
+      } else {
+          document.getElementById('login-password-error').innerHTML = ''
+      }
+        return error;
+    }
+    //set profile data
+    function getProfile(resp){
+        if(resp) {
+            document.getElementById('pname').innerHTML = resp.name;
+            document.getElementById('pfname').innerHTML = resp.fname;
+            document.getElementById('pmname').innerHTML = resp.mname;
+            document.getElementById('pmobile').innerHTML = resp.mobile;
+            document.getElementById('pemail').innerHTML = resp.email;
+            document.getElementById('paddress').innerHTML = resp.address;
+        }
+    }
+    function resetAll() {
+      document.querySelectorAll('span').forEach(element => {
+        element.innerHTML = '';
+      });
+    }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technology</title>
+    <style>
+        ul {
+            display: inline-block;
+        }
+        li {
+            display: inline-flex;
+            width: 150px;
+            text-decoration: blink;
+            text-transform: capitalize;
+            border-bottom: 4px solid black;
+            margin: 5px;
+        }
+        a {
+            text-underline-position: under;
+        }
+        .part {
+            height: 100vh;
+        }
+        div.backtotop {
+            display: flex;
+            justify-content: flex-end;
+        }
+        img {
+            height: 600px;
+            width: 100%;
+        }
+        .head {
+            background-color: lightgray;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <h1 id="top" style="text-align: right;">SKEdushphere</h1>
+    <div class="head">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="part">
+        <a id="home"></a>
+        <h3>Home</h3>
+        <img src="images/Smart-Home-Banner.jpg" alt="">
+        <div class="backtotop">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+    <div class="part">
+        <a id="contact"></a>
+        <h3>Contact Us</h3>
+        <img src="images/contact-form-banner.jpg" alt="">
+        <div class="backtotop">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+    <div class="part">
+        <a id="about"></a>
+        <h3>About Us</h3>
+        <img src="images/about-us-banner.jpg" alt="">
+        <div class="backtotop">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+    <div class="part">
+        <a id="faq"></a>
+        <h3>FAQ</h3>
+        <img src="images/FAQ-banner.jpg" alt="">
+        <div class="backtotop">
+            <a href="#top">Back to Top</a>
+        </div>
+    </div>
+</body>
+</html>

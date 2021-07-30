@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Number</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+        .main {
+            display: block;
+            width: 50%;
+            padding: 10% 25% 0 25%;
+        }
+        .label {
+            box-sizing: border-box;
+            float: left;
+            padding: 10px;
+            width: 30%;
+        }
+        label {
+            font-size: 35px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-variant-caps: petite-caps;
+        }
+        .input {
+            width: 70%;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            padding: 20px;
+        }
+        input, select {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div class="main">
+        <h1>Greatest Number Finder</h1>
+        <div class="label">
+            <label for="first-number">First Number</label>
+            <label for="second-number">Second Number</label>
+            <label for="third-number">Third Number</label>
+        </div>
+        <div class="input">
+            <input type="text" name="first-number" id="first-number" placeholder="Enter first number">
+            <input type="text" name="second-number" id="second-number" placeholder="Enter second number">
+            <input type="text" name="second-number" id="third-number" placeholder="Enter second number">
+        </div>
+        <input class="btn" type="button" id="calculate" value="Calculate">
+    </div>
+    <div class="result">
+        <h1>Result: <span id="result"></span></h1>
+    </div>
+    <script>
+        btn = document.getElementById('calculate');
+        result = '';
+        btn.addEventListener("click", function () {
+            firstNumber = parseFloat(document.getElementById('first-number').value);
+            secondNumber = parseFloat(document.getElementById('second-number').value);
+            thirdNumber = parseFloat(document.getElementById('third-number').value);
+            if (firstNumber, secondNumber, thirdNumber) {
+                result = findGreatest(firstNumber, secondNumber, thirdNumber);
+            } else {
+                alert("Please enter three numbers!");
+            }
+            document.getElementById('result').innerHTML = result;
+        });
+        function findGreatest(a, b, c) {
+            if (a > b) {
+                if (a > c) {
+                    return "First number is Greatest!";
+                } else {
+                    return "Third number is Greatest!";
+                }
+            } else {
+                if (b > c) {
+                    return "Second number is Greatest!";
+                } else {
+                    return "Third number is Greatest!";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

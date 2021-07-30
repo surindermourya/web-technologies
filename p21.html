@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even/Odd Checker</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .main {
+            display: block;
+            width: 100%;
+            padding: 10% 25% 0 25%;
+        }
+        label {
+            font-size: 35px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-variant-caps: petite-caps;
+        }
+        input, select {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .result {
+            font-size: 2.5rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div >
+        <h1>Even/Odd Checker</h1>
+        <table style="width: 50%;">
+            <tr>
+                <td><label for="number">Number</label></td>
+                <td><input type="text" name="number" id="number" placeholder="Enter number"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" id="check" value="Check"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="result">
+        <p>Result: <span id="result"></span></p>
+    </div>
+    <script>
+        btn = document.getElementById('check');
+        result = '';
+        btn.addEventListener("click", function () {
+            number = parseFloat(document.getElementById('number').value);
+            if (number) {
+                result = checkEvenOdd(number);
+            } else {
+                alert("Please enter number!");
+            }
+            document.getElementById('result').innerHTML = result;
+        });
+        function checkEvenOdd(a) {
+            if (a % 2 == 0) {
+                return "Number is Even!";
+            } else {
+                return "Number is Odd!";
+            }
+        }
+    </script>
+</body>
+</html>

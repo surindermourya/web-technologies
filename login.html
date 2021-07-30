@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .login, .profile {
+            display: block;
+            width: 50%;
+            justify-content: center;
+            padding: 10% 25%;
+        }
+        table {
+            width: 100%;
+        }
+        label {
+            font-size: 35px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-variant-caps: petite-caps;
+        }
+        input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            margin: 10px;
+            font-size: large;
+        }
+        h1 {
+            font-size: 4rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+            border-left: 45rem solid peachpuff;
+            border-bottom: 15px solid lightsalmon;
+        }
+        sup, span {
+            color: red;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div class="login" id="login">
+        <form action="#" name="login" method="POST">
+            <h1>Login</h1>
+            <table>
+                <tr>
+                    <td><label for="email">Email <sup>*</sup></label></td>
+                    <td><input type="text" name="email" id="email" placeholder="Enter email">
+                        <span id="email-error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password <sup>*</sup></label></td>
+                    <td><input type="password" name="password" id="password" placeholder="Enter password">
+                        <span id="password-error"></span></td>
+                </tr>
+                <tr>
+                    <td><input class="btn" type="button" id="login" onclick="getlogin()" value="Login"></td>
+                    <td><input class="btn" type="reset" id="reset" value="Reset"></td>
+                </tr>
+            </table>
+    </div>
+    <div id="profile" class="profile" style="height: inherit;" id="profile">
+        <h1>Profile</h1>
+        <h2>Welcome to Our Web.</h2>
+        <hr>
+        <table>
+            <tr>
+                <td><h3>Name:</h3></td>
+                <td><h3 id="name"></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Father Name</h3></td>
+                <td><h3 id="fname"></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Mother Name</h3></td>
+                <td><h3 id="mname"></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Mobile</h3></td>
+                <td><h3 id="mobile"></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Email</h3></td>
+                <td><h3 id="pemail"></h3></td>
+            </tr>
+            <tr>
+                <td><h3>Address</h3></td>
+                <td><h3><address id="address"></address></h3></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <script>
+        resp = JSON.parse(localStorage.getItem('registration'));
+        btn = document.getElementById('login');
+        profile = document.getElementById('profile');
+        profile.style.display = 'none';
+        function getlogin() {
+            email = document.getElementById('email').value;
+            pass = document.getElementById('password').value;
+            isValid = isFormValid(email,pass);
+            if(!isValid) {
+                document.getElementById('login').style.display = 'none';
+                profile.style.display = 'block';
+                getProfile(resp);
+            }
+        }
+        function isFormValid(email,pass) {
+            let error = false;
+            // error = (resp.email !== email || resp.password !== pass) ? true : false;
+            // if(resp.email !== email) {
+            //     document.getElementById('email-error').innerHTML = 'Please enter correct email.'
+            // } else {
+            //     document.getElementById('email-error').innerHTML = ''
+            // }
+            // if(resp.password !== pass) {
+            //     document.getElementById('password-error').innerHTML = 'Please enter correct password.'
+            // } else {
+            //     document.getElementById('password-error').innerHTML = ''
+            // }
+            return error;
+        }
+        function getProfile(resp){
+            if(resp) {
+                document.getElementById('name').innerHTML = resp.name;
+                document.getElementById('fname').innerHTML = resp.fname;
+                document.getElementById('mname').innerHTML = resp.mname;
+                document.getElementById('mobile').innerHTML = resp.mobile;
+                document.getElementById('pemail').innerHTML = resp.email;
+                document.getElementById('address').innerHTML = resp.address;
+            }
+        }
+        console.log(resp)
+    </script>
+</body>
+</html>

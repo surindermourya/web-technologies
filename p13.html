@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .login, .profile {
+            display: block;
+            width: 50%;
+            justify-content: center;
+            padding: 10% 25%;
+            background-image: url('images/bg.jpg');
+        }
+        .label {
+            box-sizing: border-box;
+            float: left;
+            padding: 10px;
+            width: 30%;
+        }
+        label {
+            font-size: 35px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-variant-caps: petite-caps;
+        }
+        .input {
+            width: 70%;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            padding: 20px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+        }
+        h1 {
+            font-size: 4rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+            border-left: 45rem solid peachpuff;
+            border-bottom: 15px solid lightsalmon;
+        }
+        .profile>h1 {
+            font-size: 4rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+            border-left: 25rem solid peachpuff;
+            border-bottom: 15px solid lightsalmon;
+        }
+        .btn {
+            width: 100%;
+        }
+        sup {
+            color: red;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div class="login" id="login">
+        <form action="#" name="login">
+            <h1>Login</h1>
+            <div class="label">
+                <label for="username">Username <sup>*</sup></label>
+                <label for="password">Password <sup>*</sup></label>
+            </div>
+            <div class="input">
+                <input type="text" name="username" id="username" placeholder="Enter username">
+                <input type="password" name="password" id="password" placeholder="Enter password">
+            </div>
+            <input class="btn" type="submit" id="login" value="Login">
+    </div>
+    <div class="profile" style="height: inherit;" id="profile">
+        <h1 id="hello"></h1>
+        <p style="font-size: xxx-large;">Welcome to Our Web.</p>
+    </div>
+    </form>
+    <script>
+        btn = document.getElementById('login');
+        profile = document.getElementById("profile");
+        login = document.getElementById("login");
+        profile.style.display = "none";
+        btn.addEventListener('click', function () {
+            username = document.getElementById('username').value;
+            password = document.getElementById('password').value;
+            if (username && password) {
+                login.style.display = "none";
+                profile.style.display = "block";
+                document.getElementById('hello').innerHTML = "Hey " + username;
+                document.title = "Profile";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+</head>
+<style>
+    .left {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 25%;
+        background: lightgray;
+        border-inline-start: 3vw solid grey;
+        height: 100%;
+    }
+    .right {
+        display: inline-block;
+        float: right;
+        box-sizing: border-box;
+        width: 75%;
+        height: 100%;
+        padding-left: 40px;
+    }
+    .left-panel {
+        padding-top: 1vh;
+        padding-left: 3vw;
+        margin: 10px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    u {
+        text-underline-position: under;
+        color: rgb(33, 147, 167);
+    }
+    .contact {
+        padding-left: 90px;
+        margin: 10px;
+    }
+    .pro {
+        width: 85%;
+        text-align: justify;
+        line-height: 30px;
+    }
+    .profile {
+        text-align: center;
+        box-sizing: content-box;
+        padding: 25px;
+    }
+    .left-panel>div {
+        font-size: 20px;
+    }
+    .right-panel {
+        width: 100%;
+        text-align: left;
+    }
+    table {
+        width: 100%;
+        font-size: 25px;
+        border: 3px solid grey;
+        border-radius: 1px;
+        border-collapse: collapse;
+
+    }
+    th, td {
+        width: 25%;
+        padding: 5px;
+        border: 1px solid grey;
+        border-radius: 1px;
+    }
+    .heading {
+        font-size: xx-large;
+        font-variant-caps: small-caps;
+        font-family: sans-serif;
+    }
+    .name {
+        font-size: 70px;
+        font-variant: petite-caps;
+        font-family: sans-serif;
+    }
+    .content {
+        font-size: x-large;
+        line-height: 35px;
+    }
+    .declaration {
+        display: block;
+        position: relative;
+    }
+    .list {
+        display: inline-block;
+        position: relative;
+        left: 115px;
+    }
+</style>
+<body>
+    <div class="left">
+        <div class="profile">
+            <img style="height: 300px; width: 260px;" src="images/download.png" alt="profile-pic">
+        </div>
+        <div class="left-panel">
+            <h1>CONTACT</h1>
+            <div>
+                <h3> Address</h3>
+                St. Rollins Street <br>
+                Bhimigam 1234
+            </div>
+            <div>
+                <h3>Phone</h3>
+                9845671234
+            </div>
+            <div>
+                <h3>Email</h3>
+                mike@webtech.com
+            </div>
+            <div>
+                <h3>Linkedin</h3>
+                linked.com/jordan.mike0012
+            </div>
+        </div>
+        <div class="left-panel">
+            <h1>PROFESSIONAL</h1>
+            <div class="pro">
+                <ul>
+                    <li>Able to remain when carrying out boring, repetitive or monotoneus tasks. </li>
+                    <li>Organised. Proactive and efficient. </li>
+                    <li>Task oriented, analytical and able to produce accurate work results. </li>
+                    <li>Positive "can do" attitude. </li>
+                    <li>Comfortable working in a fast paced, chellenging environment. </li>
+                </ul>
+            </div>
+        </div>
+        <div class="left-panel">
+            <h1>REFRENCES</h1>
+            <div class="pro">
+                Ronnie Clark <br>
+                Senior Web Developer <br>
+                Phone: 4758645123
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="right-panel">
+            <u>
+                <h1 class="name">Mike Jordan</h1>
+            </u>
+            <h2 style="margin-top: -35px; color: cadetblue; font-size: 28px;">Web Developer</h2>
+            <div style="display:block;">
+                <u>
+                    <h2 class="heading">Academics</h2>
+                </u>
+                <table>
+                    <th>Year</th>
+                    <th>Course Details</th>
+                    <th>Board/University</th>
+                    <th>Percentage</th>
+                    <tr>
+                        <td>2020</td>
+                        <td>Master Degree</td>
+                        <td>Citipointe Christian College</td>
+                        <td>70%</td>
+                    </tr>
+                    <tr>
+                        <td>2018</td>
+                        <td>Degree</td>
+                        <td>Canterbury College</td>
+                        <td>75%</td>
+                    </tr>
+                    <tr>
+                        <td>2015</td>
+                        <td>Senior Secondary</td>
+                        <td>All Saints Anglican School</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>2013</td>
+                        <td>High School</td>
+                        <td>All Saints Anglican School</td>
+                        <td>75%</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="display:block;">
+                <u>
+                    <h2 class="heading">Certifications</h2>
+                </u>
+                <div class="content">
+                    <ul class="list">
+                        <li> Digital Marketing Certification from Google </li>
+                        <li> Programming in Python from Udemy </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display:block;">
+                <u>
+                    <h2 class="heading">Technical Skills</h2>
+                </u>
+                <div class="content">
+                    <ul class="list">
+                        <li> Microsoft Office </li>
+                        <li> C/C ++ </li>
+                        <li> HTML </li>
+                        <li> Fundamental of Digital Marketiing </li>
+                        <li> JavaScript </li>
+                        <li> PHP </li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display:block;">
+                <u>
+                    <h2 class="heading">Hobbies</h2>
+                </u>
+                <div class="content">
+                    <ul class="list">
+                        <li> Problem Solving </li>
+                        <li> Reading</li>
+                        <li>Playing Computer Games</li>
+                        <li>Learning New Technology</li>
+                    </ul>
+                </div>
+                <div class="declaration">
+                    <h3 class="heading">Declaration:</h3>
+                    <span style="font-size: 27px;">I hereby declare that all the information furnished above is true to
+                        the best of my knowledge and belief.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

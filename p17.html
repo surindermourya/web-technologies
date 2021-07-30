@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quadratic Equation Solver</title>
+    <style>
+      .main {
+        background-color: white;
+        width: 50%;
+        text-align: center;
+        margin: 2% 25%;
+        height: 340px;
+      }
+      input {
+        width: 30px;
+        padding: 5px;
+        margin: 5px;
+        font-size: 10px;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #fe3c47;
+        padding: 30px;
+        letter-spacing: 0.05em;
+        margin: 0 -5px 50px;
+        text-transform: uppercase;
+        position: relative;
+      }
+      span {
+          padding: 20%;
+          font-size: 21px;
+      }
+      button {
+        background: #787878;
+        border: 0 solid #cccccc;
+        color: #ffffff;
+        height: 42px;
+        letter-spacing: 2px;
+        margin-top: 6px;
+        padding: 0 18px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body background="images/bg.jpg">
+    <div class="main">
+      <h1>Quadratic Formula Calculator</h1>
+      <h3>ax<sup>2</sup> + bx + c = 0 for x, where a ≠ 0,</h3>
+      <center>
+        <table>
+          <tr style="text-align: center">
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="a" id="a" /> x<sup>2</sup></td>
+            <td>+ <input type="text" name="b" id="b" /> x</td>
+            <td>+ <input type="text" name="c" id="c" /></td>
+            <td>= 0</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="button" onclick="calculateRoots()"><b>Calculate</b></button>
+            </td>
+            <td colspan="2">
+              <button type="reset" onclick="clearAll()"><b>Clear</b></button>
+            </td>
+          </tr>
+        </table>
+      </center>
+    </div>
+    <hr />
+    <h1 id="error" style="display: none;"></h1>
+    <div class="main" id="resultDiv">
+      <h1>Result</h1>
+      <h3 id="equation"></h3>
+      <span id="result"></span>
+    </div>
+    <script>
+        coff = ['a','b','c'];
+        values = {'a':0,'b':0,'c':0}
+        resultDiv = document.getElementById('resultDiv');
+        errorDiv = document.getElementById('error');
+        errorDiv.style.display = 'none';
+        resultDiv.style.display = 'none';
+      function calculateRoots() {
+        coff.forEach(e => {
+          values[e] = document.getElementById(e).value;
+        });
+        if(values.a && values.b && values.c) {
+          dis = Number(values.b * values.b - 4 * values.a * values.c);
+          if(dis > 0 ) {
+              root1 = ((-values.b + Math.sqrt(dis)) / (2 * values.a));
+              root2 = ((-values.b - Math.sqrt(dis)) / (2 * values.a));
+              document.getElementById('result')
+          } else if ( dis == 0) {
+              root1 = root2 = -values.b/ (2 * values.a)
+          } else {
+              let realPart = (-values.b / (2 * values.a)).toFixed(2);
+              let imagPart = (Math.sqrt(-dis) / (2 * values.a)).toFixed(2);
+              root1 = root2 = realPart + ' + ' + imagPart + 'i';
+          }
+          equation = `${values.a}x<sup>2</sup> + ${values.b}x + ${values.c} = 0;`
+          result = `The roots of quadratic equation are <strong>${root1}</strong> and <strong>${root2}</strong>`;
+          resultDiv.style.display = 'block';
+          document.getElementById('equation').innerHTML = equation;
+          document.getElementById('result').innerHTML = result;
+        } else {
+            errorDiv.style.display = 'block';
+            errorDiv.innerHTML = 'Please enter all the coefficients!';
+            setTimeout(() => {
+                errorDiv.style.display = 'none';
+            }, 3000);
+        }
+      }
+      function clearAll() {
+        coff.forEach(e => {
+            document.getElementById(e).value = '';
+        });
+      }
+    </script>
+  </body>
+</html>

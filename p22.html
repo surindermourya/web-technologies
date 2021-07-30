@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Checker</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .main {
+            display: block;
+            width: 50%;
+            padding: 10% 25% 0 25%;
+        }
+        input, select {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .result {
+            font-size: 2.5rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div class="main">
+    <h1>Prime Number Checker</h1>
+    <input type="text" name="number" id="number" placeholder="Enter number">
+    <input type="button" id="check" value="Check">
+    </div>
+    <p class="result"><strong>Result:</strong> <span id="result"></span></p>
+    <script>
+        btn = document.getElementById('check');
+        result = '';
+        btn.addEventListener("click", function () {
+            number = parseFloat(document.getElementById('number').value);
+            if (number) {
+                result = checkPrime(number);
+            } else {
+                alert("Please enter number!");
+            }
+            document.getElementById('result').innerHTML = result;
+        });
+        function checkPrime(a) {
+            for(let i = 2; i < a; i++) {
+                if(a % i == 0) {
+                    return "Number is not Prime Number!";
+                }
+            }
+            return "Number is Prime Number!";
+        }
+    </script>
+</body>
+</html>

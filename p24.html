@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        input {
+            display: block;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .result {
+            font-size: 2.5rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <h1>Factorial Calculator</h1>
+    <input type="text" name="number" id="number" placeholder="Enter number">
+    <input type="button" id="generate" value="Generate">
+    <div class="result">
+        <p><b>Factorial of a Number:</b> <span id="result"></span></p>
+    </div>
+    <script>
+        btn = document.getElementById('generate');
+        result = '';
+        btn.addEventListener("click", function () {
+            number = parseFloat(document.getElementById('number').value);
+            if (number) {
+                result = factorial(number);
+            } else {
+                alert("Please enter number!");
+            }
+            document.getElementById('result').innerHTML = result;
+        });
+        function factorial(a) {
+            let fact = 1;
+            for(let i = 1; i <= a; i++) {
+                fact *= i;
+            }
+            return fact;
+        }
+    </script>
+</body>
+</html>

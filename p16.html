@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .body  {
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+        .calculator {
+            display: block;
+            width: 50%;
+            padding: 10% 25% 0 25%;
+            background-image: url('images/bg.jpg');
+        }
+        .label {
+            box-sizing: border-box;
+            float: left;
+            padding: 10px;
+            width: 30%;
+        }
+        label {
+            font-size: 35px;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-variant-caps: petite-caps;
+        }
+        .input {
+            width: 70%;
+            display: block;
+            box-sizing: border-box;
+            float: left;
+            padding: 20px;
+        }
+        input, select {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 4rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .result>h1 {
+            font-size: 4rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .btn {
+            width: 100%;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <hr>
+        <div class="label">
+            <label for="first-number">First Number</label>
+            <label for="second-number">Second Number</label>
+            <label for="operation">Select Operation</label>
+        </div>
+        <div class="input">
+            <input type="text" name="first-number" id="first-number" placeholder="Enter first number">
+            <input type="text" name="second-number" id="second-number" placeholder="Enter second number">
+            <select name="operation" id="operation">
+                <option value="">Select operation</option>
+                <option value="add">Addition</option>
+                <option value="subtract">Subtraction</option>
+                <option value="multiply">Multiplication</option>
+                <option value="divide">Division</option>
+            </select>
+        </div>
+        <input class="btn" type="button" id="calculate" value="Calculate">
+
+    </div>
+    <div class="result">
+        <h1>Result: <span id="result"></span></h1>
+    </div>
+    <script>
+        btn = document.getElementById('calculate');
+        result = 0;
+        operationSelect = document.getElementById('operation');
+        selectedOperation = 0;
+        operationSelect.addEventListener('change', function (event) {
+            selectedOperation = event.target.options.selectedIndex;
+        });
+        btn.addEventListener("click", function () {
+            firstNumber = parseFloat(document.getElementById('first-number').value);
+            secondNumber = parseFloat(document.getElementById('second-number').value);
+            if (firstNumber, secondNumber) {
+                result = calculateValue(firstNumber, secondNumber);
+            } else {
+                alert("Please enter both numbers!");
+            }
+            if (result == 'Infinity') {
+                alert("Denominator can't be zero!");
+            } else {
+                document.getElementById('result').innerHTML = parseFloat(result);
+            }
+        });
+        function calculateValue(a, b) {
+            switch (selectedOperation) {
+                case 1:
+                    return a + b;
+                    break;
+                case 2:
+                    return a - b;
+                    break;
+                case 3:
+                    return a * b;
+                    break;
+                case 4:
+                    return a / b;
+                    break;
+                default:
+                    alert('Please select operation to be performed!');
+                    return;
+            }
+        }
+    </script>
+</body>
+</html>

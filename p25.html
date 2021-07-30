@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+    <style>
+        input {
+            display: block;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            font-size: 17px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+        .result {
+            font-size: 2.5rem;
+            font-variant-caps: petite-caps;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body background="images/bg.jpg">
+    <h1>Fibonacci Series</h1>
+    <input type="button" id="generate" value="Generate">
+    <div class="result">
+        <p>Result: <span id="toAppend"></span></p>
+    </div>
+    <script>
+        btn = document.getElementById('generate');
+        result = '';
+        btn.addEventListener("click", function () {
+            result = generateTable();
+        });
+        function generateTable() {
+            node = document.getElementById('toAppend');
+            let first = 0;
+            let second = 1;
+            let label = document.createElement("span");
+            let text = document.createTextNode(first + " ");
+            label.appendChild(text);
+            node.appendChild(label);
+            label = document.createElement("span");
+            text = document.createTextNode(second + " ");
+            label.appendChild(text);
+            node.appendChild(label);
+            while(second < 74) {
+                let temp = first + second;
+                label = document.createElement("span");
+                text = document.createTextNode(temp + " ");
+                label.appendChild(text);
+                node.appendChild(label);
+                first = second;
+                second = temp;
+            }
+        }
+    </script>
+</body>
+</html>
